@@ -1,22 +1,11 @@
 pipeline {
-    agent any
-
+    agent {
+        docker { image 'node:14-alpine' }
+    }
     stages {
-        stage('Build') {
-            steps {
-                sh 'ls -l'
-                sh 'docker build -t harbor.asd/library/deneme:latest .'
-                sh 'docker images'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'node --version'
             }
         }
     }
