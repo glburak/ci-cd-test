@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'ls -l'
-                sh 'docker build .'
+                sh 'docker build -t harbor.asd.com/library/komki:latest'
             }
         }
     }
