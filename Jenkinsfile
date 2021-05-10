@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'ls -l'
                 sh 'docker build -t harbor.asd.com/library/komki:latest .'
-                sh 'docker run -d harbor.asd.com/library/komki:latest -p 8989:80'
+                sh 'docker run -d -p 8989:80 --name nginx harbor.asd.com/library/komki:latest '
             }
         }
     }
