@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker --version'
+                sh 'ls -l'
+                sh 'docker build -t harbor.asd/library/deneme:latest .'
+                sh 'docker images'
             }
         }
         stage('Test') {
